@@ -1,7 +1,6 @@
 class Rustune < Formula
   desc "Terminal music player with online audio search and Winamp skin support"
   homepage "https://rustune.dzulfikar.com"
-  version "0.3.6"
   license "MIT"
 
   livecheck do

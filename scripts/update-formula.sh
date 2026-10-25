@@ -70,7 +70,6 @@ cat >"$FORMULA" <<EOF
 class Rustune < Formula
   desc "Terminal music player with online audio search and Winamp skin support"
   homepage "https://rustune.dzulfikar.com"
-  version "$version"
   license "MIT"
 
   livecheck do
@@ -119,3 +118,6 @@ end
 EOF
 
 echo "Generated $FORMULA for rustune $version"
+if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
+  echo "version=$version" >>"$GITHUB_OUTPUT"
+fi

@@ -24,6 +24,7 @@ jobs:
           ref: main
 
       - name: Regenerate formula
+        id: generate
         run: ./scripts/update-formula.sh
 
       - name: Commit and push if changed
@@ -34,7 +35,7 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          version="$(sed -n 's/^  version "\(.*\)"$/\1/p' Formula/rustune.rb)"
+          version="${{ steps.generate.outputs.version }}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Formula/rustune.rb
