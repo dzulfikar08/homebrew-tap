@@ -4,6 +4,11 @@ class Rustune < Formula
   version "0.3.6"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   on_macos do
     on_arm do
       url "https://github.com/dzulfikar08/rustune/releases/download/v0.3.6/rustune-aarch64-macos"
@@ -20,14 +25,7 @@ class Rustune < Formula
       url "https://github.com/dzulfikar08/rustune/releases/download/v0.3.6/rustune-x86_64-linux"
       sha256 "5668e4945d6bdf617cf580bfebf835b4fdd76bafb4580a4bf1509ee1c8afeae9"
     end
-  end
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
-
-  on_linux do
     depends_on "patchelf" => :build
     depends_on "alsa-lib"
   end
@@ -40,7 +38,7 @@ class Rustune < Formula
 
     # The prebuilt binary links libasound.so.2; point it at Homebrew's alsa-lib
     # so it works without a system libasound2.
-    system "patchelf", "--set-rpath", Formula["alsa-lib"].opt_lib, bin/"rustune"
+    system "patchelf", "--set-rpath", formula_opt_lib("alsa-lib"), bin/"rustune"
   end
 
   def caveats
