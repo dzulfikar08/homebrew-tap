@@ -10,19 +10,23 @@ class Rustune < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/dzulfikar08/rustune/releases/download/v0.3.6/rustune-aarch64-macos"
-      sha256 "e1b551ab4c2607ae11c9b9e158c79d7295b4594843a784aaa7f96f70ed680556"
+      url "https://github.com/dzulfikar08/rustune/releases/download/v0.3.7/rustune-aarch64-macos"
+      sha256 "c74491763989f5e8539ca62138044179b60fbbb0fe7bc86da7763cc23d519cf5"
     end
     on_intel do
-      url "https://github.com/dzulfikar08/rustune/releases/download/v0.3.6/rustune-x86_64-macos"
-      sha256 "f80c276355f0110ca0ac8b149e27d34c3b99ec79a9f9670fb18a557395e22839"
+      url "https://github.com/dzulfikar08/rustune/releases/download/v0.3.7/rustune-x86_64-macos"
+      sha256 "b78f7b0eea853d21960fd537f69554a85d773d62e164e04f30097ac32510deb9"
     end
   end
 
   on_linux do
+    on_arm do
+      url "https://github.com/dzulfikar08/rustune/releases/download/v0.3.7/rustune-aarch64-linux"
+      sha256 "459ee7dc82773b590421016fee116aac87c51ad63ef0de01113d5ba1c4ce58fe"
+    end
     on_intel do
-      url "https://github.com/dzulfikar08/rustune/releases/download/v0.3.6/rustune-x86_64-linux"
-      sha256 "5668e4945d6bdf617cf580bfebf835b4fdd76bafb4580a4bf1509ee1c8afeae9"
+      url "https://github.com/dzulfikar08/rustune/releases/download/v0.3.7/rustune-x86_64-linux"
+      sha256 "8203f42f5bed508d8816cfa42dec3ed11d6b57d0d22524a3c0aa2036186b9f54"
     end
 
     depends_on "patchelf" => :build
